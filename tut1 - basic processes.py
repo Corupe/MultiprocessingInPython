@@ -1,7 +1,6 @@
 # DISCLAIMER AND NOTICES :
 #   1: you can remove time.sleep(0.5) from the square_numbers function
 #   2: you can lower the amount of processes to a range from 1 to 4
-#   3: ask any time to explain any of this
 
 
 # multiprocessing : a standard library that comes installed with python, it let's us make parallel programs
@@ -16,7 +15,7 @@ import time
 def square_numbers(numbers: []):
     # created this "result" list(array/table) to hold the squared results of each number
     result = []
-    # just a loop that goes through each nulber and squeres it then appending it to the result list(array)
+    # just a loop that goes through each number and squares it then appending it to the result list(array)
     for number in numbers:
         # time.sleep(seconds) : this delays the code by half a second
         # time.sleep(0.5)
@@ -26,14 +25,14 @@ def square_numbers(numbers: []):
     print(result)
 
 
-# احفظوها ذي
+
 if __name__ == '__main__':
     start = time.time()
     # numbers is a list of 100 numbers(0 included), it looks like this numbers = [0,1,2,3,4,5,6.....,98,99]
-    numbers = range(100000)
+    numbers = range(100)
     # created an empty list for processes [example : p1 = Process(target=function, args=(arguments,))]
     processes = []
-    # imagine like this for(int i = 0; i < 50; i++){bla bla bla}
+    
     for i in range(5):
         # here creating a Process that receives square_numbers as a target function and numbers as an argument for square_numbers
         process = Process(target=square_numbers, args=(numbers,))
